@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="1">
+<insert id="addUser" parameterType="org.great.bean.User">
+		insert into
+		TBUSER values(#{tbuid},#{tbuname})
+	</insert>
+	<delete id="byID" parameterType="integer">
+	delete from TBUSER where tbuid=#{id} 
+	</delete>
+	<select id="findID" resultType="org.great.bean.User">
+	select tbuid,tbuname from tbuser where tbuid=#{id} 
+	</select>
+	
+
+</mapper>
